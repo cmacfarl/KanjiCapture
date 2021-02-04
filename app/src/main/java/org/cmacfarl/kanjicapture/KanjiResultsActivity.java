@@ -33,7 +33,9 @@ import org.cmacfarl.kanjicapture.db.Reading;
 import org.cmacfarl.kanjicapture.db.ReadingDao;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
@@ -60,12 +62,13 @@ public class KanjiResultsActivity extends AppCompatActivity
         ReadingDao readingDao = getKanjiDatabase().readingDao();
         MeaningDao meaningDao = getKanjiDatabase().meaningDao();
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_2, android.R.id.text1, kanjis) {
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.kanji_results_list, R.id.item_line, kanjis) {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
                 View view = super.getView(position, convertView, parent);
-                TextView text1 = (TextView) view.findViewById(android.R.id.text1);
-                TextView text2 = (TextView) view.findViewById(android.R.id.text2);
+                TextView text1 = (TextView) view.findViewById(R.id.item_line);
+                TextView text2 = (TextView) view.findViewById(R.id.reading_line);
+                TextView text3 = (TextView) view.findViewById(R.id.meaning_line);
 
                 String kanji = kanjis.get(position);
 
@@ -73,16 +76,11 @@ public class KanjiResultsActivity extends AppCompatActivity
                 List<Meaning> meanings = meaningDao.getMeanings(kanji);
 
                 String mainLine = kanji;
-                String meaningStrings = "";
-                for (Reading reading : readings) {
-                    mainLine += " " + reading.reading;
-                }
-                for (Meaning meaning : meanings) {
-                    meaningStrings += " " + meaning.meaning;
-                }
-
+                String readingStrings = readings.stream().map(e -> e.reading).collect(Collectors.joining(", "));
+                String meaningStrings = meanings.stream().map(e -> e.meaning).collect(Collectors.joining(", "));
                 text1.setText(mainLine);
-                text2.setText(meaningStrings);
+                text2.setText(readingStrings);
+                text3.setText(meaningStrings);
                 return view;
             }
         };
@@ -94,7 +92,7 @@ public class KanjiResultsActivity extends AppCompatActivity
             @Override
             public void onItemClick(AdapterView<?> parent, final View view, int position, long id) {
 
-                final Character item = (Character) parent.getItemAtPosition(position);
+                final String item = kanjis.get(position);
 
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 String url = "https://jisho.org/search/" + item;
