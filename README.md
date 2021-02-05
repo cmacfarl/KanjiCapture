@@ -1,6 +1,8 @@
 # KanjiCapture
 
-Android application for image recognition of Japanese kanji characters.
+Android application for image recognition of Japanese kanji characters.  
+
+This application differs from Google Translate in that it's focused on kanji recognition instead of sentence translation and gives the readings in kana instead of romaji.  Designed as a streamlined learning aid for kanji where the source material is printed and there is no furigana.
 
 ![diagram](https://raw.githubusercontent.com/cmacfarl/KanjiCapture/images/images/readme-diagram.png)
 
