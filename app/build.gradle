@@ -57,6 +57,8 @@ dependencies {
     implementation "androidx.camera:camera-view:1.0.0-SNAPSHOT"
     implementation "com.airbnb.android:lottie:3.6.0"
 
+    implementation 'com.github.daniel-stoneuk:material-about-library:3.1.2'
+
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

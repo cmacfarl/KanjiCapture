@@ -18,6 +18,8 @@ package org.cmacfarl.kanjicapture;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 
 public class KanjiCaptureApplication extends Application
 {
@@ -31,4 +33,17 @@ public class KanjiCaptureApplication extends Application
     public static Context getAppContext() {
         return KanjiCaptureApplication.context;
     }
+
+    public static String getVersionName()
+    {
+        String version = "0.0.0";
+        try {
+            PackageInfo pInfo = getAppContext().getPackageManager().getPackageInfo(getAppContext().getPackageName(), 0);
+            version = pInfo.versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return version;
+    }
+
 }
