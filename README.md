@@ -6,7 +6,7 @@ Android application for image recognition of Japanese kanji characters.
 
 ## Requirements
 
-This application relies upon Google's Cloud Vision API.  Cloud vision usage tiers are described [here](https://cloud.google.com/vision/pricing). 
+This application relies upon Google's Cloud Vision API.  Cloud vision usage and pricing tiers are described [here](https://cloud.google.com/vision/pricing).  Each account is allocated 1000 free queries a month. 
 
 To build and use this application you must set up the Vision API within your own Google account as described at https://cloud.google.com/vision/docs/setup.  
 
