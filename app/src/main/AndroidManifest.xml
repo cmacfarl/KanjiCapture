@@ -18,6 +18,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".KanjiResultsActivity"></activity>
+
+        <activity android:name=".about.KanjiCaptureAboutActivity"
+            android:theme="@style/AppTheme.MaterialAboutActivity"/>
+
     </application>
 
     <uses-feature android:name="android.hardware.camera" />

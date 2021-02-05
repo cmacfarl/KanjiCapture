@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">KanjiCapture</string>
+    <string name="cmacfarl">Craig MacFarlane</string>
+    <string name="kanjidic_website">http://www.edrdg.org/wiki/index.php/KANJIDIC_Project</string>
 </resources>
