@@ -10,14 +10,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KanjiCapture">
-        <activity android:name=".KanjiCaptureActivity">
+
+        <activity android:name=".KanjiCaptureActivity"
+            android:screenOrientation="fullUser"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/app_name"
+            android:launchMode="singleTask">
+        </activity>
+
+        <activity android:name=".permissions.PermissionValidatorWrapper"
+            android:screenOrientation="fullUser"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/app_name"
+            android:launchMode="singleTask" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".KanjiResultsActivity"></activity>
+
+        <activity android:name=".KanjiResultsActivity">
+        </activity>
 
         <activity android:name=".about.KanjiCaptureAboutActivity"
             android:theme="@style/AppTheme.MaterialAboutActivity"/>
