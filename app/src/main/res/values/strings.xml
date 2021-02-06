@@ -2,4 +2,10 @@
     <string name="app_name">KanjiCapture</string>
     <string name="cmacfarl">Craig MacFarlane</string>
     <string name="kanjidic_website">http://www.edrdg.org/wiki/index.php/KANJIDIC_Project</string>
+    <string name="permPermanentlyDeniedRecovery">Click here to be redirected to the Settings activity,
+    then select Permissions and enable %s.</string>
+    <string name="permRcCameraExplain">The KanjiCapture application must be able to access the camera in order to enable recognition of kanji.
+    It is not possible to run the application without this permission.</string>
+    <string name="permGenericExplain">
+    It is not possible to run the application without this permission. You must allow all permissions.</string>
 </resources>
