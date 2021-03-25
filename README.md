@@ -10,7 +10,7 @@ This application differs from Google Translate in that it's focused on kanji rec
 
 This application relies upon Google's Cloud Vision API.  Cloud vision usage and pricing tiers are described [here](https://cloud.google.com/vision/pricing).  Each account is allocated 1000 free queries a month. 
 
-To build and use this application you must set up the Vision API within your own Google account as described at https://cloud.google.com/vision/docs/setup.  
+A stock build of this repository will fail without your own instance of google-services.json.  To build and use this application you must set up the Vision API within your own Google account as described at https://cloud.google.com/vision/docs/setup.  
 
 ## Acknowledgements
 
