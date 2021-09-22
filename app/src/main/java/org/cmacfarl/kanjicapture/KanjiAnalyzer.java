@@ -75,8 +75,8 @@ class KanjiAnalyzer implements ImageAnalysis.Analyzer
         }
         Image mediaImage = imageProxy.getImage();
         int rot = imageProxy.getImageInfo().getRotationDegrees();
-        // int rotation = degreesToFirebaseRotation(degrees);
-        FirebaseVisionImage image = FirebaseVisionImage.fromMediaImage(mediaImage, rot);
+        int rotation = degreesToFirebaseRotation(rot);
+        FirebaseVisionImage image = FirebaseVisionImage.fromMediaImage(mediaImage, rotation);
 
         // Pass image to an ML Kit Vision API
         // ...
